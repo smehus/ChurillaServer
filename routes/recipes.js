@@ -4,6 +4,7 @@ var ObjectId = require('mongodb').ObjectId
 var mongoUri = process.env.MONGOLAB_URI || 'mongodb://heroku_fr66zgw3:k6k3gi0ejiaerib6j9u2o47rbk@ds021922.mlab.com:21922/heroku_fr66zgw3'
 var mainDb
 var recipeCollection
+var debugCollection
 
 // Set up the database connection with mongolab
 mongo.connect(mongoUri, function(err, db) {
@@ -18,6 +19,11 @@ mongo.connect(mongoUri, function(err, db) {
 				recipeCollection = collection
 			}
 		});
+
+		// Used for debugging
+		db.collection('debug', function(errr, col) {
+			debugCollection = col
+		})
 	};
 });
 
@@ -40,3 +46,25 @@ exports.removeRecipe = function(req, res) {
 exports.removeAllRecipes = function(req, res) {
 	console.log('REMOVE ALL RECIPES')
 }
+
+
+// DEBUG
+
+exports.debugAdd = function(req, res) {
+	debugCollection.insert({shiittttt: 'CLAIRE CLAIRE CLAIRE'}, {safe: true}, function(err, rs) {
+		res.send(rs)
+	});
+};
+
+exports.debugAll = function(req, res) {
+	debugCollection.find().toArray(function(err, items) {
+		res.send(items)
+	});
+};
+
+
+
+
+
+
+
