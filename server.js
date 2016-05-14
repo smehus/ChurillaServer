@@ -10,4 +10,5 @@ app.listen(port, function() {
 app.get('/all', recipes.getAllRecipes)
 app.post('/add', recipes.addRecipe)
 app.get('/search', recipes.searchRecipes)
-app.delete('/remove', recipes.removeRecipe)
+app.post('/remove', recipes.removeRecipe)
+app.post('/removeAll', recipes.removeAllRecipes)

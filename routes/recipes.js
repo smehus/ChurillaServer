@@ -22,17 +22,21 @@ mongo.connect(mongoUri, function(err, db) {
 });
 
 exports.addRecipe = function(req, res) {
-
+	console.log('ADD RECIPE');
 };
 
 exports.getAllRecipes = function(req, res) {
-
+	console.log('GET ALL');
 };
 
 exports.searchRecipes = function(req, res) {
-
+	console.log('SEARCH RECIPES')
 };
 
 exports.removeRecipe = function(req, res) {
-
+	console.log('REMOVE RECIPE')
 };
+
+exports.removeAllRecipes = function(req, res) {
+	console.log('REMOVE ALL RECIPES')
+}
