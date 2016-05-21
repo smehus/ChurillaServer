@@ -51,7 +51,7 @@ exports.removeAllRecipes = function(req, res) {
 // DEBUG
 
 exports.debugAdd = function(req, res) {
-	debugCollection.insert({shiittttt: 'CLAIRE CLAIRE CLAIRE'}, {safe: true}, function(err, rs) {
+	debugCollection.insert({beautiful: 'CLAIRE CLAIRE CLAIRE'}, {safe: true}, function(err, rs) {
 		res.send(rs)
 	});
 };
