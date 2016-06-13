@@ -6,6 +6,7 @@
     "dependencies": {
         "express": "4.x",
         "mongodb": "~2.0",
-        "kerberos": "~0.0.17"
+        "kerberos": "~0.0.17",
+        "s3": "4.x"
     }
 }
