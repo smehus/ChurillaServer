@@ -7,6 +7,21 @@ var mainDb
 var recipeCollection
 var debugCollection
 
+
+var client = s3.createClient({
+  maxAsyncS3: 20,     // this is the default 
+  s3RetryCount: 3,    // this is the default 
+  s3RetryDelay: 1000, // this is the default 
+  multipartUploadThreshold: 20971520, // this is the default (20 MB) 
+  multipartUploadSize: 15728640, // this is the default (15 MB) 
+  s3Options: {
+    accessKeyId: "AKIAJXTQYBC24IJQXKRQ",
+    secretAccessKey: "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",
+    // any other options are passed to new AWS.S3() 
+    // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
+  },
+});
+
 // Set up the database connection with mongolab
 mongo.connect(mongoUri, function(err, db) {
 	if (err) {
@@ -27,6 +42,9 @@ mongo.connect(mongoUri, function(err, db) {
 		})
 	};
 });
+
+
+
 
 exports.addRecipe = function(req, res) {
 	console.log('ADD RECIPE');
