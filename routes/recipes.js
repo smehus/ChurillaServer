@@ -22,6 +22,18 @@ var client = s3.createClient({
   },
 });
 
+var params(file: String) = {
+  localFile: file,
+ 
+  s3Params: {
+    Bucket: "churillarecipes",
+    Key: "mzOgWdq/mi6Cu+eGM1xJrxHluZWDC0UK9SdDeiU1",
+    // other options supported by putObject, except Body and ContentLength. 
+    // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property 
+  },
+};
+
+
 // Set up the database connection with mongolab
 mongo.connect(mongoUri, function(err, db) {
 	if (err) {
