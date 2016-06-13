@@ -1,5 +1,6 @@
 var mongo = require('mongodb').MongoClient
 var ObjectId = require('mongodb').ObjectId
+var s3 = require('s3');
 // mongo lab connection point
 var mongoUri = process.env.MONGOLAB_URI || 'mongodb://heroku_fr66zgw3:k6k3gi0ejiaerib6j9u2o47rbk@ds021922.mlab.com:21922/heroku_fr66zgw3'
 var mainDb
