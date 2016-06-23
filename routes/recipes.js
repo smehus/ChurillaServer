@@ -74,6 +74,7 @@ exports.addRecipe = function(req, res) {
 
 exports.getAllRecipes = function(req, res) {
 	console.log('GET ALL');
+	res.send({'IT WORKS' : 'YAYYY'});
 };
 
 exports.searchRecipes = function(req, res) {
