@@ -8,30 +8,30 @@ var recipeCollection
 var debugCollection
 
 
-var client = s3.createClient({
-  maxAsyncS3: 20,     // this is the default 
-  s3RetryCount: 3,    // this is the default 
-  s3RetryDelay: 1000, // this is the default 
-  multipartUploadThreshold: 20971520, // this is the default (20 MB) 
-  multipartUploadSize: 15728640, // this is the default (15 MB) 
-  s3Options: {
-    accessKeyId: "AKIAJXTQYBC24IJQXKRQ",
-    secretAccessKey: "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",
-    // any other options are passed to new AWS.S3() 
-    // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
-  },
-});
+// var client = s3.createClient({
+//   maxAsyncS3: 20,     // this is the default 
+//   s3RetryCount: 3,    // this is the default 
+//   s3RetryDelay: 1000, // this is the default 
+//   multipartUploadThreshold: 20971520, // this is the default (20 MB) 
+//   multipartUploadSize: 15728640, // this is the default (15 MB) 
+//   s3Options: {
+//     accessKeyId: "AKIAJXTQYBC24IJQXKRQ",
+//     secretAccessKey: "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",
+//     // any other options are passed to new AWS.S3() 
+//     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
+//   },
+// });
 
-var params(file: String) = {
-  localFile: file,
+// var params(file: String) = {
+//   localFile: file,
  
-  s3Params: {
-    Bucket: "churillarecipes",
-    Key: "mzOgWdq/mi6Cu+eGM1xJrxHluZWDC0UK9SdDeiU1",
-    // other options supported by putObject, except Body and ContentLength. 
-    // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property 
-  },
-};
+//   s3Params: {
+//     Bucket: "churillarecipes",
+//     Key: "mzOgWdq/mi6Cu+eGM1xJrxHluZWDC0UK9SdDeiU1",
+//     // other options supported by putObject, except Body and ContentLength. 
+//     // See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#putObject-property 
+//   },
+// };
 
 
 // Set up the database connection with mongolab
