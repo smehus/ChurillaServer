@@ -79,7 +79,7 @@ exports.getAllRecipes = function(req, res) {
 		if (error != null) {
 			res.send({'success': 0, 'errorMessage': 'Failed to retrieve recipes'});
 		} else {
-			res.send({'success': 1, 'items': items);
+			res.send({'success': 1, 'items': 'fuck');
 		}
 	})
 };
