@@ -65,9 +65,11 @@ exports.addRecipe = function(req, res) {
 
 	recipeCollection.insert(recipe, {safe: true}, function(err, res) {
 		if (err != null) {
-			res.status(200).send();
+			res.status = 200
+			res.send();
 		} else {
-			res.status(400).send();
+			res.status = 400
+			res.send();
 		}
 	})
 };
