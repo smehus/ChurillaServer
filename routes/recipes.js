@@ -64,7 +64,7 @@ exports.addRecipe = function(req, res) {
 	var recipe = {title: 'Scotts Favorite Recipe', description: 'I like this alot', imageUrl: ''};
 
 	recipeCollection.insert(recipe, {safe: true}, function(err, res) {
-		if (err != nil) {
+		if (err != null) {
 			res.status(200).send();
 		} else {
 			res.status(400).send();
