@@ -61,7 +61,7 @@ mongo.connect(mongoUri, function(err, db) {
 exports.addRecipe = function(req, res) {
 	console.log('ADD RECIPE');
 
-	var recipe = {title: 'Scotts Favorite Recipe', description: 'I like this alot', imageUrl: ''};
+	var recipe = {title: req.body.title, description: req.body.description, imageUrl: ''};
 
 	recipeCollection.insert(recipe, {safe: true}, function(err, success) {
 		if (err != null) {
