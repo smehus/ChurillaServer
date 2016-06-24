@@ -66,9 +66,9 @@ exports.addRecipe = function(req, res) {
 
 	recipeCollection.insert(recipe, {safe: true}, function(err, success) {
 		if (err != null) {
-			res.send({'success': 0, 'errorMessage': 'Failed to insert recipe into collection'});
+			res.send({'success': '0', 'errorMessage': 'Failed to insert recipe into collection'});
 		} else {
-			res.send({'success': 1});
+			res.send({'success': '1'});
 		}
 	})
 };
