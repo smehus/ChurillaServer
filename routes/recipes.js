@@ -66,9 +66,9 @@ exports.addRecipe = function(req, res) {
 
 	recipeCollection.insert(recipe, {safe: true}, function(err, success) {
 		if (err != null) {
-			res.send({'success': 0, 'errorMessage': 'Failed to insert recipe into collection'});
+			res.send({'success': false, 'errorMessage': 'Failed to insert recipe into collection'});
 		} else {
-			res.send({'success': 1});
+			res.send({'success': true});
 		}
 	})
 };
@@ -78,7 +78,7 @@ exports.getAllRecipes = function(req, res) {
 	recipeCollection.find().toArray(function(error, items) {
 		if (error != null) {
 			console.log('FAILED GETTING ITEMS');
-			res.send({'success': 0, 'errorMessage': 'Failed to retrieve recipes'});
+			res.send({'success': false, 'errorMessage': 'Failed to retrieve recipes'});
 		} else {
 			console.log('SUCCCESS GETTING ITEMS');
 			res.send({'success': true, 'items': items});
