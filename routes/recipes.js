@@ -59,7 +59,7 @@ mongo.connect(mongoUri, function(err, db) {
 
 
 exports.addRecipe = function(req, res) {
-	console.log('ADD RECIPE');
+	console.log('ADD RECIPE' + req.body.title);
 
 	var recipe = {title: req.body.title, description: req.body.description, imageUrl: ''};
 
