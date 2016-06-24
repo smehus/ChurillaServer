@@ -77,9 +77,11 @@ exports.getAllRecipes = function(req, res) {
 	console.log('GET ALL');
 	recipeCollection.find().toArray(function(error, items) {
 		if (error != null) {
+			console.log('FAILED GETTING ITEMS');
 			res.send({'success': 0, 'errorMessage': 'Failed to retrieve recipes'});
 		} else {
-			res.send({'success': true, 'items': 'fuck');
+			console.log('SUCCCESS GETTING ITEMS');
+			res.send({'success': '', 'items': 'fuck');
 		}
 	})
 };
