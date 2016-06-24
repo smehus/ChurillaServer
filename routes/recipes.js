@@ -75,7 +75,13 @@ exports.addRecipe = function(req, res) {
 
 exports.getAllRecipes = function(req, res) {
 	console.log('GET ALL');
-	res.send({'IT WORKS' : 'YAYYY'});
+	recipeCollection.find().toArray(function(error, items) {
+		if (error != null) {
+			res.send({success: 0, errorMessage: 'Failed to retrieve recipes'});
+		} else {
+			res.send({success: 1, items: items);
+		}
+	})
 };
 
 exports.searchRecipes = function(req, res) {
