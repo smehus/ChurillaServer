@@ -65,9 +65,9 @@ exports.addRecipe = function(req, res) {
 
 	recipeCollection.insert(recipe, {safe: true}, function(err, res) {
 		if (err != nil) {
-			res.send({success: 0});
+			res.status(200).send();
 		} else {
-			res.send({success: 1});
+			res.status(400).send();
 		}
 	})
 };
