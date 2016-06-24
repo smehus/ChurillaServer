@@ -70,7 +70,7 @@ exports.addRecipe = function(req, res) {
 			res.send({'success': 0, 'error': 'Failed to insert recipe into collection'});
 		} else {
 
-			res.status(409).send({'success': 0, 'error': 'Failed to insert recipe into collection'});
+			res.status(409).send('what');
 			// res.status = 200
 			// res.send({'success': 1});
 		}
