@@ -62,7 +62,7 @@ exports.addRecipe = function(req, res) {
 	console.log('ADD RECIPE REQUEST BODY');
 	console.log(req.body);
 
-	var recipe = {title: req.body.title, description: req.body.description, imageUrl: String(req.body.imageUrl)};
+	var recipe = {title: req.body.title, description: req.body.description, imageUrl: String(req.body.imageUrls)};
 
 	recipeCollection.insert(recipe, {safe: true}, function(err, success) {
 		if (err != null) {
