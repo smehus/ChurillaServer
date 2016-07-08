@@ -93,6 +93,11 @@ exports.addFinishedImage = function(req, res) {
 		{$push: {finishedImages: req.body.image}},
 		{safe: true, upsert: true}, function(err, user) {
 			console.log("updated user" + user)
+			if (err != null) {
+				res.send({'success': true, 'items': user});	
+			} else {
+				res.send({'success': false});
+			}
 		});
 }
 
