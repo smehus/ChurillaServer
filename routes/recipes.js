@@ -86,6 +86,16 @@ exports.getAllRecipes = function(req, res) {
 	})
 };
 
+exports.addFinishedImage = function(req, res) {
+	cosole.log(req.body)
+
+	recipeCollection.findOneAndUpdate( {_id: req.body.objectId}, 
+		{$push: {finishedImages: req.body.image}},
+		{safe: true, upsert: true}, function(err, user) {
+			console.log("updated user" + user)
+		});
+}
+
 exports.searchRecipes = function(req, res) {
 	console.log('SEARCH RECIPES')
 };
