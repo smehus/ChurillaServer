@@ -91,7 +91,7 @@ exports.addFinishedImage = function(req, res) {
 
 	recipeCollection.findOneAndUpdate( {_id: req.body._id}, 
 		{$push: {finishedImages: req.body.image}},
-		{safe: true, upsert: true}, function(err, user) {
+		{safe: true, upsert: false}, function(err, user) {
 			console.log("updated user" + user + err)
 			if (err == null) {
 				res.send({'success': true, 'items': user});	
