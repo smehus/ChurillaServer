@@ -87,7 +87,7 @@ exports.getAllRecipes = function(req, res) {
 };
 
 exports.addFinishedImage = function(req, res) {
-	cosole.log(req.body)
+	console.log(req.body)
 
 	recipeCollection.findOneAndUpdate( {_id: req.body.objectId}, 
 		{$push: {finishedImages: req.body.image}},
