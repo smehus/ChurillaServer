@@ -23,3 +23,5 @@ app.post('/add', recipes.addRecipe)
 app.get('/search', recipes.searchRecipes)
 app.post('/remove', recipes.removeRecipe)
 app.post('/removeAll', recipes.removeAllRecipes)
+app.put('/addFinishedImage', recipes.addFinishedImage)
+
