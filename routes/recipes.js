@@ -57,7 +57,7 @@ mongo.connect(mongoUri, function(err, db) {
 
 exports.config = function(req, res) {
 	console.log('CONFIG HIT');
-	res.sendFile('config.json');
+	res.sendFile('public/config.json' , { root : __dirname});
 }
 
 exports.addRecipe = function(req, res) {
