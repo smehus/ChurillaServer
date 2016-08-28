@@ -56,8 +56,15 @@ mongo.connect(mongoUri, function(err, db) {
 });
 
 exports.config = function(req, res) {
-	var config = {bucket: 'churillarecipes', accessKey: 'AKIAJXTQYBC24IJQXKRQ', secret: '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' }
-	res.send(config)
+	res.sendFile('config.json', options, function(err){
+	    if(err){
+	        console.log(err);
+	        res.status(err.status).end();
+	    }
+	    else{
+	        console.log('Sent: ' + "file.json");
+	    }
+	});
 }
 
 exports.addRecipe = function(req, res) {
